@@ -18,7 +18,7 @@ class _AccountState extends State<Account> {
         padding: EdgeInsets.all(20),
         width: SizeConfig.screenWidth,
         height: height,
-        color: colorWhite,
+        color: extraLightPrimaryColor,
         child: Column(
           children: [
             _buildGreenBackgroundBox(), //Widgeth for greenbackground color

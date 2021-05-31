@@ -7,6 +7,7 @@ const Color colorWhite = Color(0xffffffff);
 const Color colorRed = Color(0xffC44137);
 const Color primaryColor = Color(0xFF0815B3);
 const Color lightPrimaryColor = Color(0xFFE9E9FF);
+const Color extraLightPrimaryColor = Color(0xFFFBFBFF);
 var black14NormalStyle = TextStyle(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w400,

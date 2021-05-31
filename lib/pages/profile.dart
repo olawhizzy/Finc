@@ -1,6 +1,7 @@
 import 'package:finc/constants.dart';
 import 'package:finc/sizeConfig.dart';
 import 'package:finc/tabs/account.dart';
+import 'package:finc/tabs/timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -13,14 +14,14 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: colorWhite,
+      color: extraLightPrimaryColor,
       child: SafeArea(
         child: DefaultTabController(
           length: 3,
           child: Scaffold(
             appBar: AppBar(
               elevation: 0.0,
-              backgroundColor: Colors.white,
+              backgroundColor: extraLightPrimaryColor,
               leading: Container(
                 margin: EdgeInsets.all(5),
                 child: MaterialButton(
@@ -108,7 +109,7 @@ class _ProfilePageState extends State<ProfilePage> {
             body: TabBarView(
               children: [
                 Account(),
-                Icon(Icons.directions_transit),
+                TimelinePage(),
                 Icon(Icons.directions_bike),
               ],
             ),
@@ -125,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Container(
       margin: EdgeInsets.all(40),
       height: 350,
-      color: colorWhite,
+      //color: extraLightPrimaryColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
