@@ -489,7 +489,7 @@ class _AccountState extends State<Account> {
                                   heightSizeBox20,
                                   heightSizeBox20,
                                   Text(
-                                    'You can share your personal USSD code with anyone to receive payments from them.',
+                                    'You can share your personal URL with anyone to receive payments from them.',
                                     style: black14NormalStyle,
                                     textAlign: TextAlign.center,
                                   ),
