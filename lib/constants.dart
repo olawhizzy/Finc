@@ -40,3 +40,18 @@ var grey14NormalStyle = TextStyle(
 );
 var heightSizeBox20 = SizedBox(height: 20,);
 var heightSizeBox10 = SizedBox(height: 10,);
+var shadowStyle = BoxDecoration(
+  borderRadius: BorderRadius.all(Radius.circular(10)),
+  color: colorWhite,
+  boxShadow: [
+    BoxShadow(
+      color: lightPrimaryColor,
+      blurRadius: 5.0, // soften the shadow
+      spreadRadius: 1.0, //extend the shadow
+      offset: Offset(
+        0.0, // Move to right 10  horizontally
+        0.0, // Move to bottom 10 Vertically
+      ),
+    )
+  ],
+);

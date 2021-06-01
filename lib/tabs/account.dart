@@ -86,7 +86,7 @@ class _AccountState extends State<Account> {
     print(height);
     print(width);
     return Container(
-      height: 200,
+      height: 180,
       width: width,
       margin: EdgeInsets.symmetric(horizontal: 90, vertical: 40),
       child: Stack(

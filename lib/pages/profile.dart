@@ -1,6 +1,7 @@
 import 'package:finc/constants.dart';
 import 'package:finc/sizeConfig.dart';
 import 'package:finc/tabs/account.dart';
+import 'package:finc/tabs/connections.dart';
 import 'package:finc/tabs/timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -70,6 +71,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     labelColor: primaryColor,
                     indicatorColor: primaryColor,
                     unselectedLabelColor: colorGreyBlack,
+                    isScrollable: true,
                     tabs: [
                       Tab(
                         child: Row(
@@ -110,7 +112,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 Account(),
                 TimelinePage(),
-                Icon(Icons.directions_bike),
+                Connections()
               ],
             ),
 

@@ -24,7 +24,9 @@ ButtonTheme raisedButton(
       double minWidth,
       double height,
       Color borderSideColor,
+      Color buttonColor,
       TextStyle style,
+      double fontSize,
       Widget leadingIcon,
       Widget trailingIcon}) {
   return ButtonTheme(
@@ -36,7 +38,7 @@ ButtonTheme raisedButton(
             borderRadius: BorderRadius.circular(borderRadius ?? 25),
             side: BorderSide(color: borderSideColor ?? color)),
         textColor: Colors.white,
-        color: primaryColor,
+        color: buttonColor ?? primaryColor,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           // This is must when you are using Row widget inside Raised Button
@@ -46,8 +48,8 @@ ButtonTheme raisedButton(
             Text(
               text ?? '',
               style: TextStyle(
-                color: Colors.white,
-                fontSize: 14.0,
+                color: textColor ?? Colors.white,
+                fontSize: fontSize ?? 14.0,
                 fontWeight: FontWeight.w500,
                 fontStyle: FontStyle.normal,
                 letterSpacing: 1.2,
