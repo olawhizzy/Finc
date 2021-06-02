@@ -1,5 +1,6 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:finc/constants.dart';
+import 'package:finc/tabs/newConnection.dart';
 import 'package:flutter/material.dart';
 import 'myProfile.dart';
 class Connections extends StatefulWidget {
@@ -50,7 +51,7 @@ class _ConnectionsState extends State<Connections> {
       width: 95,
       decoration: shadowStyle.copyWith(color: colorWhite),
       child: InkWell(
-        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfile())),
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => NewConnection())),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

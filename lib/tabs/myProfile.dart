@@ -2,6 +2,7 @@ import 'package:finc/constants.dart';
 import 'package:finc/sizeConfig.dart';
 import 'package:finc/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:popup_menu/popup_menu.dart';
 class MyProfile extends StatefulWidget {
   @override
   _MyProfileState createState() => _MyProfileState();
@@ -10,6 +11,7 @@ class MyProfile extends StatefulWidget {
 class _MyProfileState extends State<MyProfile> {
   @override
   Widget build(BuildContext context) {
+    PopupMenu.context = context;
     return Container(
       color: extraLightPrimaryColor,
       child: SafeArea(
@@ -36,7 +38,10 @@ class _MyProfileState extends State<MyProfile> {
               Container(
                 margin: EdgeInsets.all(5),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print('kk');
+                    _buildPopUp();
+                  },
                   elevation: 0.0,
                   color: lightPrimaryColor,
                   textColor: primaryColor,
@@ -165,5 +170,50 @@ class _MyProfileState extends State<MyProfile> {
         letterSpacing: 1.2,
       ),
     );
+  }
+
+  //pop up
+  _buildPopUp(){
+    PopupMenu menu = PopupMenu(
+        backgroundColor: Colors.teal,
+        lineColor: Colors.tealAccent,
+        maxColumn: 3,
+        items: [
+          MenuItem(title: 'Copy', image: Image.asset('assets/copy.png')),
+          MenuItem(
+              title: 'Home',
+              textStyle: TextStyle(fontSize: 10.0, color: Colors.tealAccent),
+              image: Icon(
+                Icons.home,
+                color: Colors.white,
+              )),
+          MenuItem(
+              title: 'Mail',
+              image: Icon(
+                Icons.mail,
+                color: Colors.white,
+              )),
+          MenuItem(
+              title: 'Power',
+              image: Icon(
+                Icons.power,
+                color: Colors.white,
+              )),
+          MenuItem(
+              title: 'Setting',
+              image: Icon(
+                Icons.settings,
+                color: Colors.white,
+              )),
+          MenuItem(
+              title: 'PopupMenu',
+              image: Icon(
+                Icons.menu,
+                color: Colors.white,
+              ))
+        ],
+        onClickMenu: null,
+        onDismiss: null);
+    menu.show();
   }
 }
