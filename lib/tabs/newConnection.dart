@@ -9,6 +9,7 @@ class NewConnection extends StatefulWidget {
 }
 
 class _NewConnectionState extends State<NewConnection> {
+  ScrollController _controllerOne = ScrollController();
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -199,10 +200,20 @@ class _NewConnectionState extends State<NewConnection> {
                     ),
                     Container(
                       height: height * 0.8,
+                      width: width,
                       margin: EdgeInsets.only(top: 20),
+                      padding: EdgeInsets.all(20),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(topLeft: Radius.circular(50),topRight: Radius.circular(50))
+                      ),
+                      child: Column(
+                        children: [
+                          Text('Connections List', style: black14NormalStyle.copyWith(fontWeight: FontWeight.w700),),
+                          heightSizeBox20,
+                          _filterbox(),
+                          _connectionList(height),
+                        ],
                       ),
                     )
                   ],
@@ -215,4 +226,55 @@ class _NewConnectionState extends State<NewConnection> {
     );
   }
 
+  //filter box
+  _filterbox(){
+    return Container(
+      padding: EdgeInsets.all(12),
+      height: 50,
+      decoration: shadowStyle,
+      child: TextField(
+//    ...,other fields
+        decoration: InputDecoration(
+          prefixIcon:Icon(Icons.search, color: primaryColor,),
+          border: InputBorder.none,
+        ),
+      ),
+    );
+  }
+  
+  //connection list
+  _connectionList(height){
+    return Scrollbar(
+      controller: _controllerOne,
+      isAlwaysShown: true,
+      child: Container(
+        height: height * 0.64,
+        child: ListView(
+          children: [
+            Text('A', style: black14NormalStyle.copyWith(color: primaryColor),),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            Text('B', style: black14NormalStyle.copyWith(color: primaryColor),),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+            _conectionItems(),
+          ],
+        ),
+      ),
+    );
+  }
+  //connectionItems
+  _conectionItems(){
+    return ListTile(
+      title: Text('Amina Bashiru',style: black14NormalStyle,),
+      trailing: CircleAvatar(backgroundImage: AssetImage('images/female.png'),),
+    );
+  }
 }
